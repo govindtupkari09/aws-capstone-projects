@@ -1,34 +1,83 @@
 # Project 2 - AWS Resource Automation Using Python
 
-## Objective
+## 📌 Project Overview
 
-Automate AWS resource creation and management using Python and boto3.
+This project automates common AWS resource management tasks using Python and the AWS SDK for Python (Boto3).
 
-## AWS Services / Technologies
+Instead of manually performing operations through the AWS Management Console, the application provides a simple command-line menu to perform AWS operations programmatically.
 
-- AWS IAM
-- Amazon EC2
+The project demonstrates how Python can be used to interact with AWS services securely and efficiently.
+
+---
+
+## 🎯 Objective
+
+The main objective of this project is to automate AWS resource provisioning and management using Python and Boto3.
+
+The application can:
+
+- Create S3 buckets
+- Upload files to S3
+- Launch EC2 instances
+- List EC2 instances
+- Stop EC2 instances
+- Terminate EC2 instances
+
+---
+
+## 🛠️ Technologies Used
+
+- Python 3
+- AWS Boto3
 - Amazon S3
-- Python
-- boto3
+- Amazon EC2
+- AWS IAM
+- AWS CLI
+- Git & GitHub
+- PowerShell
 
-## Planned Automation
+---
 
-The application will provide a command-line menu to perform AWS operations such as:
+## ☁️ AWS Services Used
 
-1. Create an S3 bucket
-2. Upload a file to S3
-3. Launch an EC2 instance
-4. Display EC2 instances
-5. Stop an EC2 instance
-6. Terminate an EC2 instance
+### Amazon S3
 
-## Project Structure
+Used for:
 
-- scripts/ - Python automation scripts
-- docs/ - Project documentation
-- screenshots/ - Implementation screenshots
+- Creating S3 buckets
+- Uploading files
 
-## Security
+### Amazon EC2
 
-AWS credentials and other sensitive information will not be committed to GitHub.
+Used for:
+
+- Launching EC2 instances
+- Listing instances
+- Stopping instances
+- Terminating instances
+
+### AWS IAM
+
+Used for authentication and authorization of AWS API requests.
+
+### Boto3
+
+Boto3 is the AWS SDK for Python. It allows Python applications to communicate with AWS services programmatically.
+
+---
+
+## ✨ Features
+
+The application provides a CLI-based menu:
+
+```text
+==============================
+     AWS RESOURCE AUTOMATOR
+==============================
+1. Create S3 Bucket
+2. Upload File to S3
+3. Launch EC2
+4. List EC2 Instances
+5. Stop EC2 Instance
+6. Terminate EC2 Instance
+7. Exit
