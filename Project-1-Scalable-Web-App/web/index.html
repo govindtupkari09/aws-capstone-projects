@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AWS Scalable Web Application</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .info {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .info-box {
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #333;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .status {
+            margin-top: 25px;
+            padding: 12px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 30px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>AWS Scalable Web Application</h1>
+
+        <p class="subtitle">
+            EC2 + Application Load Balancer + Auto Scaling
+        </p>
+
+        <div class="info">
+
+            <div class="info-box">
+                <span class="label">Hostname:</span>
+                <span id="hostname">Loading...</span>
+            </div>
+
+            <div class="info-box">
+                <span class="label">Instance ID:</span>
+                <span id="instance-id">Loading...</span>
+            </div>
+
+            <div class="info-box">
+                <span class="label">Private IP:</span>
+                <span id="private-ip">Loading...</span>
+            </div>
+
+            <div class="info-box">
+                <span class="label">Availability Zone:</span>
+                <span id="availability-zone">Loading...</span>
+            </div>
+
+        </div>
+
+        <div class="status">
+            Application Status: Running
+        </div>
+
+        <footer>
+            AWS Capstone Project — Scalable Web Application
+        </footer>
+
+    </div>
+
+</body>
+</html>
