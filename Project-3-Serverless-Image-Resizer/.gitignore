@@ -1,0 +1,12 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Pillow Lambda layer - generated files
+python/
+pillow-layer.zip
+
+# Local environment
+.env
+.venv/
+venv/
