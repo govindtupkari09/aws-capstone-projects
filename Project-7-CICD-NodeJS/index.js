@@ -4,7 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-    res.send("🚀 CI/CD Node.js Application is running!");
+   res.send("🚀 CI/CD Pipeline Deployed Successfully!");
 });
 
 app.get("/health", (req, res) => {
