@@ -30,3 +30,26 @@ jobs:
       - name: Run tests
         working-directory: Project-7-CICD-NodeJS
         run: npm test
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: [self-hosted, Linux, X64]
+
+    steps:
+      - name: Deploy application to EC2
+        run: |
+          set -e
+
+          cd ~/aws-capstone-projects
+
+          git fetch origin
+          git reset --hard origin/main
+
+          cd Project-7-CICD-NodeJS
+
+          npm ci
+          npm test
+
+          pm2 restart project-7-cicd
+
+          curl -f http://localhost:3000/health
