@@ -21,14 +21,14 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: Project-7-CICD-NodeJS/package-lock.json
+          cache-dependency-path: Project-4-CICD-NodeJS/package-lock.json
 
       - name: Install dependencies
-        working-directory: Project-7-CICD-NodeJS
+        working-directory: Project-4-CICD-NodeJS
         run: npm ci
 
       - name: Run tests
-        working-directory: Project-7-CICD-NodeJS
+        working-directory: Project-4-CICD-NodeJS
         run: npm test
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -45,7 +45,7 @@ jobs:
           git fetch origin
           git reset --hard origin/main
 
-          cd Project-7-CICD-NodeJS
+          cd Project-4-CICD-NodeJS
 
           npm ci
           npm test
@@ -53,3 +53,4 @@ jobs:
           pm2 restart project-7-cicd
 
           curl -f http://localhost:3000/health
+
