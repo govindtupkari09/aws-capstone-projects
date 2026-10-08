@@ -51,7 +51,9 @@ jobs:
           npm test
 
           pm2 restart project-7-cicd
+          sleep 5
 
           curl -f http://localhost:3000/health
+
 
 
