@@ -30,6 +30,7 @@ jobs:
       - name: Run tests
         working-directory: Project-4-CICD-NodeJS
         run: npm test
+
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: test
@@ -45,15 +46,19 @@ jobs:
           git fetch origin
           git reset --hard origin/main
 
-          if [ -d Project-4-CICD-NodeJS ]; then cd Project-4-CICD-NodeJS; else cd Project-7-CICD-NodeJS; fi
+          if [ -d Project-4-CICD-NodeJS ]; then
+            cd Project-4-CICD-NodeJS
+          else
+            cd Project-7-CICD-NodeJS
+          fi
 
           npm ci
           npm test
 
-          pm2 restart project-7-cicd
-          sleep 5
+          pm2 delete project-7-cicd || true
+          pm2 start index.js --name project-7-cicd
+          pm2 save
 
-          curl -f http://localhost:3000/health
+          sleep 3
 
-
-
+          curl --retry 5 --retry-delay 2 --retry-connrefused -f http://localhost:3000/health
