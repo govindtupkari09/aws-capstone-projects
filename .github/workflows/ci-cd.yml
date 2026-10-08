@@ -45,7 +45,7 @@ jobs:
           git fetch origin
           git reset --hard origin/main
 
-          cd Project-4-CICD-NodeJS
+          if [ -d Project-4-CICD-NodeJS ]; then cd Project-4-CICD-NodeJS; else cd Project-7-CICD-NodeJS; fi
 
           npm ci
           npm test
@@ -53,4 +53,5 @@ jobs:
           pm2 restart project-7-cicd
 
           curl -f http://localhost:3000/health
+
 
