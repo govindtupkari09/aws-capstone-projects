@@ -1,0 +1,23 @@
+{
+  "family": "project-5-flask-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::270254976698:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "project-5-flask-container",
+      "image": "270254976698.dkr.ecr.ap-south-1.amazonaws.com/project-5-flask:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 5000,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  ]
+}
